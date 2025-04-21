@@ -1,0 +1,39 @@
+﻿<Window x:Class="ush4.Views.Windows.ReportView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ush4.Views.Windows"
+         xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf"
+        xmlns:vm="clr-namespace:ush4.ViewModels"
+        xmlns:res_views="clr-namespace:ush4.Views.Windows"
+        mc:Ignorable="d"
+        Title="Report" Height="900" Width="800"
+        Loaded="Window_Loaded"
+        >
+    <!--<Window.DataContext>        
+        <vm:Report_VM/>
+    </Window.DataContext>-->
+
+    <Grid x:Name="report">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="200*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="RepCaption" Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding Path=RepCaption}" TextAlignment="Center" />
+        <TextBox x:Name="RepPathPdf" Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding Path=RepPathPdf}" TextAlignment="Center" Visibility="Hidden"/>
+
+        <res_views:SetValuesView Grid.Row="1" Grid.Column="0"/>
+        <res_views:ResultValuesView Grid.Row="1" Grid.Column="1" DataContext="{Binding ResultValues}"/>
+
+        <oxy:PlotView  Grid.Row="2" Grid.ColumnSpan="2" Model="{Binding RepRawPlotModel}" Margin="0,0,0,00" />
+        <oxy:PlotView  Grid.Row="3" Grid.ColumnSpan="2" Model="{Binding RepFFTPlotModel}" Margin="0,0,0,00" />
+    </Grid>
+</Window>

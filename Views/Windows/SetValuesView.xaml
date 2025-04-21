@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="ush4.Views.Windows.SetValuesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ush4.Views.Windows"
+             xmlns:vm="clr-namespace:ush4.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <d:UserControl.DataContext>
+        <vm:Report_VM x:Name="rv"/>
+    </d:UserControl.DataContext>
+    <Grid>
+        <GroupBox Header="Заданные параметры" Margin="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="0.25*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Content="Frequency" Grid.Column="0"></Label>
+                <Label Grid.Row="1" Content="Amplitude" Grid.Column="0"></Label>
+                <Label Grid.Row="2" Content="Velocity" Grid.Column="0"></Label>
+                <Label Grid.Row="3" Content="Acceleration" Grid.Column="0"></Label>
+
+                <Label Grid.Row="0" Content="{Binding TargetFrequency}" ContentStringFormat="{}{0:0.########}" HorizontalContentAlignment="Center" Grid.Column="1" FontWeight="Bold"></Label>
+                <Label Grid.Row="1" Content="{Binding TargetDispl}"  ContentStringFormat="{}{0:0.########}" HorizontalContentAlignment="Center" Grid.Column="1" FontWeight="Bold"></Label>
+                <Label Grid.Row="2" Content="{Binding TargetVel}"  ContentStringFormat="{}{0:0.########}" HorizontalContentAlignment="Center" Grid.Column="1" FontWeight="Bold"></Label>
+                <Label Grid.Row="3" Content="{Binding TargetAcc}"  ContentStringFormat="{}{0:0.########}" HorizontalContentAlignment="Center" Grid.Column="1" FontWeight="Bold"></Label>
+
+                <Label Grid.Row="0" Content="Hz" Grid.Column="2"></Label>
+                <Label Grid.Row="1" Content="m" Grid.Column="2"></Label>
+                <Label Grid.Row="2" Content="m/s" Grid.Column="2"></Label>
+
+                <TextBlock Grid.Row="3" Grid.Column="2" Margin="4,4,0,2">
+                    m/s
+                    <Span Typography.Variants="Superscript">
+                        2&#x200a;
+                    </Span>
+                </TextBlock>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

@@ -1,0 +1,11 @@
+{
+  "MainWindowName": "Horizontal Seismic Device",
+  "PathToListFolder": null,
+  "PathToDataFolder": null,
+  "DisplacementUnits": "m",
+  "MaxFrequencyRelativeSigma": 0.005,
+  "NumberOfPeriods": 10,
+  "MaxMeasureTime_minutes": 60,
+  "AutoMeasurements": true,
+  "AutoModeWaitTime_seconds": 20
+}

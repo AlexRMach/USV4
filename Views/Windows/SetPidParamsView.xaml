@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="ush4.Views.Windows.SetPidParamsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ush4.Views.Windows"             
+             xmlns:vm="clr-namespace:ush4.ViewModels"
+             xmlns:views="clr-namespace:ush4.Views.Windows"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <d:UserControl.DataContext>
+        <vm:SetPidParams_VM />
+    </d:UserControl.DataContext>
+    <Grid>        
+            <GroupBox Header="Параметры PID регулятора" Grid.Row="0" Grid.Column="0" Margin="2,2,2,2" Background="#FFF3E2C7">
+                <Grid Margin="3,3,3,3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100*"/>
+                        <RowDefinition Height="100*"/>
+                        <RowDefinition Height="100*"/>
+                        <RowDefinition Height="100*"/>
+                        <RowDefinition Height="100*"/>
+                </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="100*"/>
+                </Grid.ColumnDefinitions>
+                    <Border
+                        Grid.Row="0" Grid.Column="0"  
+                        BorderBrush="LightGray"  
+                        BorderThickness="1" 
+                        Background="LightGray"
+                        Name="border_freq"                       
+                        >       
+                        <TextBlock HorizontalAlignment="Center" Height="20"  Margin="0,0,0,0" TextWrapping="Wrap" Text="KP[1]"/>
+                    </Border>
+
+                    <Border 
+                        Grid.Row="1" Grid.Column="0"  
+                        BorderBrush="LightGray"  
+                        BorderThickness="1" 
+                        Background="LightGray" Margin="0,0,0,0" 
+                        >
+                        
+                        <TextBlock HorizontalAlignment="Center" Height="40"  Margin="0,0,0,0" TextWrapping="Wrap" Text="KI[1]"/>
+                    </Border>
+
+                    <Border
+                        Grid.Row="2" Grid.Column="0"  
+                        BorderBrush="LightGray"  
+                        BorderThickness="1" 
+                        Background="LightGray" Margin="0,0,0,0" 
+                        >                        
+                        <TextBlock HorizontalAlignment="Center" Height="40"   Margin="0,0,0,0" TextWrapping="Wrap" Text="KP[2]"/>
+                    </Border>
+
+                    <Border
+                        Grid.Row="3" Grid.Column="0"  
+                        BorderBrush="LightGray"  
+                        BorderThickness="1" 
+                        Background="LightGray"
+                        Name="border_Ki2_start"                       
+                        >
+                        <TextBlock HorizontalAlignment="Center" Height="20"  Margin="0,0,0,0" TextWrapping="Wrap" Text="KI[2]"/>
+                    </Border>
+
+                    <Border
+                        Grid.Row="0" Grid.Column="2"  
+                        BorderBrush="LightGray"  
+                        BorderThickness="1" 
+                        Background="LightGray"
+                        Name="border_Ki2_steady"                       
+                        >
+                        <TextBlock HorizontalAlignment="Center" Height="20"  Margin="0,0,0,0" TextWrapping="Wrap" Text="KP[1]"/>
+                    </Border>
+
+                    <Border 
+                        Grid.Row="1" Grid.Column="2"  
+                        BorderBrush="LightGray"  
+                        BorderThickness="1" 
+                        Background="LightGray" Margin="0,0,0,0" 
+                        Name="border_ki1_steady"                       
+                        >
+
+                        <TextBlock HorizontalAlignment="Center" Height="40"  Margin="0,0,0,0" TextWrapping="Wrap" Text="KI[1]"/>
+                    </Border>
+
+                    <Border
+                        Grid.Row="2" Grid.Column="2"  
+                        BorderBrush="LightGray"  
+                        BorderThickness="1" 
+                        Background="LightGray" Margin="0,0,0,0" 
+                        >
+                        
+                        <TextBlock HorizontalAlignment="Center" Height="40"   Margin="0,0,0,0" TextWrapping="Wrap" Text="KP[2]"/>
+                    </Border>
+
+                    <Border
+                        Grid.Row="3" Grid.Column="2"  
+                        BorderBrush="LightGray"  
+                        BorderThickness="1" 
+                        Background="LightGray"                        
+                        >   
+                        <TextBlock HorizontalAlignment="Center" Height="20"  Margin="0,0,0,0" TextWrapping="Wrap" Text="KI[2]"/>
+                    </Border>
+
+                    <Border
+                        Grid.Row="4" Grid.Column="2"  
+                        BorderBrush="LightGray"  
+                        BorderThickness="1" 
+                        Background="LightGray"                        
+                        >
+                        <TextBlock HorizontalAlignment="Center" Height="20"  Margin="0,0,0,0" TextWrapping="Wrap" Text="KP[3]"/>
+                    </Border>
+
+                    <Border
+                        Grid.Row="4" Grid.Column="0"  
+                        BorderBrush="LightGray"  
+                        BorderThickness="1" 
+                        Background="LightGray"                        
+                        >
+                        <TextBlock HorizontalAlignment="Center" Height="20"  Margin="0,0,0,0" TextWrapping="Wrap" Text="KP[3]"/>
+                    </Border>
+                <!--<views:SetPointValueView DataContext="{Binding NumOfRegPeriods}" Grid.Row="1" Grid.Column="1"/>
+            <views:SetPointValueView DataContext="{Binding TimeOfReg}" Grid.Row="2" Grid.Column="1"/>-->
+
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp1_start, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" />
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Ki1_start,Mode=TwoWay}" Grid.Row="1" Grid.Column="1" />
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp2_start, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" />
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Ki2_start, Mode=TwoWay}" Grid.Row="3" Grid.Column="1" />
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp3_start, Mode=TwoWay}" Grid.Row="4" Grid.Column="1" />
+
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp1_steady, Mode=TwoWay}" Grid.Row="0" Grid.Column="3" />
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Ki1_steady,Mode=TwoWay}" Grid.Row="1" Grid.Column="3" />
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp2_steady, Mode=TwoWay}" Grid.Row="2" Grid.Column="3" />
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Ki2_steady, Mode=TwoWay}" Grid.Row="3" Grid.Column="3" />
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp3_steady, Mode=TwoWay}" Grid.Row="4" Grid.Column="3" />
+            </Grid>
+            </GroupBox>
+        </Grid>
+</UserControl>

@@ -1,0 +1,64 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ush4"
+                    xmlns:Stats ="clr-namespace:ush4.ViewModels.Disp">
+
+    <BitmapImage x:Key="Offline" UriSource="/ush4;component/Infrastructure/Icons/DeviceStates/offline_circle_50px.png"></BitmapImage>
+    <BitmapImage x:Key="Ok" UriSource="/ush4;component/Infrastructure/Icons/DeviceStates/ok_50px.png"></BitmapImage>
+    <BitmapImage x:Key="Work" UriSource="/ush4;component/Infrastructure/Icons/DeviceStates/work_50px.png" ></BitmapImage>
+    <BitmapImage x:Key="Warning" UriSource="/ush4;component/Infrastructure/Icons/DeviceStates/warning_50px.png"></BitmapImage>
+    <BitmapImage x:Key="Error" UriSource="/ush4;component/Infrastructure/Icons/DeviceStates/error_50px.png" ></BitmapImage>
+
+    <BitmapImage x:Key="Unsaved" UriSource="/ush4;component/Infrastructure/Icons/SaveStatus/icons8-save-red-50.png"></BitmapImage>
+    <BitmapImage x:Key="Saved" UriSource="/ush4;component/Infrastructure/Icons/SaveStatus/icons8-save-blue-50.png"></BitmapImage>
+
+    <BitmapImage x:Key="Rec" UriSource="/ush4;component/Infrastructure/Icons/RecordStatus/icons8-record-filled-25.png" ></BitmapImage>
+    <BitmapImage x:Key="Stop" UriSource="/ush4;component/Infrastructure/Icons/RecordStatus/icons8-stop-25.png" ></BitmapImage>
+
+    <!--<BitmapImage x:Key="Add" UriSource="WPF/Icons/DeviceStates/plus_50.png" ></BitmapImage>
+    <BitmapImage x:Key="Remove" UriSource="WPF/Icons/DeviceStates/minus_50.png" ></BitmapImage>-->
+
+    <Style x:Key="LogImgStyle" TargetType="Image">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding DeviceState}" Value="{x:Static Stats:DeviceStateViewModel+enDeviceStates.Off}">
+                <Setter Property="Source" Value="{StaticResource Offline}"></Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding DeviceState}" Value="{x:Static  Stats:DeviceStateViewModel+enDeviceStates.Ok}">
+                <Setter Property="Source" Value="{StaticResource Ok}"></Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding DeviceState}" Value="{x:Static  Stats:DeviceStateViewModel+enDeviceStates.Work}">
+                <Setter Property="Source" Value="{StaticResource Work}"></Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding DeviceState}" Value="{x:Static  Stats:DeviceStateViewModel+enDeviceStates.Warning}">
+                <Setter Property="Source" Value="{StaticResource Warning}"></Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding DeviceState}" Value="{x:Static  Stats:DeviceStateViewModel+enDeviceStates.Error}">
+                <Setter Property="Source" Value="{StaticResource Error}"></Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="SaveImgStyle" TargetType="Image">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsSaved}" Value="True">
+                <Setter Property="Source" Value="{StaticResource Saved}"></Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsSaved}" Value="False">
+                <Setter Property="Source" Value="{StaticResource Unsaved}"></Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="RecordImgStyle" TargetType="Image">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsRecording}" Value="True">
+                <Setter Property="Source" Value="{StaticResource Rec}"></Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsRecording}" Value="False">
+                <Setter Property="Source" Value="{StaticResource Stop}"></Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

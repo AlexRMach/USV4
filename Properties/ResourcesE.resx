@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACFail" xml:space="preserve">
+    <value>AC fail: Loss of phase.</value>
+  </data>
+  <data name="ActiveMovement" xml:space="preserve">
+    <value>Active movement. Not in standstill.</value>
+  </data>
+  <data name="An_error_occurred_while_polling_the_device_status" xml:space="preserve">
+    <value>An error occurred while polling the device status.</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Cannot_create_Personality_Model_from_file" xml:space="preserve">
+    <value>Cannot create Personality Model from file.</value>
+  </data>
+  <data name="Cannot_start_upload_Personality_Model_from_drive" xml:space="preserve">
+    <value>Cannot start upload Personality Model from drive.</value>
+  </data>
+  <data name="CommProcessFail" xml:space="preserve">
+    <value>Commutation process fail during motor on.</value>
+  </data>
+  <data name="Configuration_file_of_device_does_not_found" xml:space="preserve">
+    <value>Configuration file of device does not found.</value>
+  </data>
+  <data name="Connection_info" xml:space="preserve">
+    <value>Connection info: {0}.</value>
+  </data>
+  <data name="CurrenPeakLimit" xml:space="preserve">
+    <value>Current exceeded peak limit.</value>
+  </data>
+  <data name="CurrentLimit" xml:space="preserve">
+    <value>Current Limit is on.</value>
+  </data>
+  <data name="DeviceConnected" xml:space="preserve">
+    <value>Device connected!</value>
+  </data>
+  <data name="DeviceDisconnected" xml:space="preserve">
+    <value>Device disconnected!</value>
+  </data>
+  <data name="DeviceDoesNotFound" xml:space="preserve">
+    <value>Device does not found</value>
+  </data>
+  <data name="DeviceInfo" xml:space="preserve">
+    <value>Device name {0}. Connection type: {1}. </value>
+  </data>
+  <data name="DeviceIsReady" xml:space="preserve">
+    <value>Device is ready</value>
+  </data>
+  <data name="DeviceTryToConnect" xml:space="preserve">
+    <value>Try connect to ELMO drive</value>
+  </data>
+  <data name="DriveOk" xml:space="preserve">
+    <value>The drive is OK.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error: {0}.</value>
+  </data>
+  <data name="ErrorFormat" xml:space="preserve">
+    <value>ErrorCode: {0}, ErrorCodeDescription: {1}, LibraryErrorCode: {2}, LibraryErrorDescription: {3}.</value>
+  </data>
+  <data name="ErrorWhileWrite" xml:space="preserve">
+    <value>An error occurred while writing a command to the drive.</value>
+  </data>
+  <data name="ExternalInhibit" xml:space="preserve">
+    <value>External Inhibit was triggered (INH/ENB).</value>
+  </data>
+  <data name="FailedToStart" xml:space="preserve">
+    <value>Failed to start motor.</value>
+  </data>
+  <data name="FeedbackPositionLimit" xml:space="preserve">
+    <value>Feedback is out of position limits.</value>
+  </data>
+  <data name="GantrySlaveDisabled" xml:space="preserve">
+    <value>Gantry slave disabled.</value>
+  </data>
+  <data name="GantryYaw" xml:space="preserve">
+    <value>Gantry Yaw or Stepper closed loop Position error.</value>
+  </data>
+  <data name="HallMismatch" xml:space="preserve">
+    <value>HallMismatch</value>
+  </data>
+  <data name="HallSpeedTooHigh" xml:space="preserve">
+    <value>Halls sensor speed is too high.</value>
+  </data>
+  <data name="HeartbeatEvent" xml:space="preserve">
+    <value>Heartbeat event or frame loss(communication).</value>
+  </data>
+  <data name="HomingEvent" xml:space="preserve">
+    <value>In Elmo's homing or capture sequence.</value>
+  </data>
+  <data name="HomingFail" xml:space="preserve">
+    <value>Homing operation aborted or error occurred!</value>
+  </data>
+  <data name="HomingFinished" xml:space="preserve">
+    <value>Homing operation complete!</value>
+  </data>
+  <data name="MainFeedbackError" xml:space="preserve">
+    <value>Main feedback error.</value>
+  </data>
+  <data name="MotorEnable" xml:space="preserve">
+    <value>The motor is enabled.</value>
+  </data>
+  <data name="MotorFault" xml:space="preserve">
+    <value>A fault occurred while the motor was enabled.</value>
+  </data>
+  <data name="MotorNotEnable" xml:space="preserve">
+    <value>The motor is not enabled.</value>
+  </data>
+  <data name="MotorStuck" xml:space="preserve">
+    <value>Motor is stuck.</value>
+  </data>
+  <data name="NumericOverflow" xml:space="preserve">
+    <value>Numeric overflow - ambiguity in results.</value>
+  </data>
+  <data name="Overspeed" xml:space="preserve">
+    <value>Overspeed indication.</value>
+  </data>
+  <data name="Overtemperature" xml:space="preserve">
+    <value>Overtemperature: The drive is sensing a temperature which exceeds the maximum allowed temperature limit.</value>
+  </data>
+  <data name="Overvoltage" xml:space="preserve">
+    <value>Overvoltage: The amplifier is measuring a voltage which is higher than the maximum allowed value.</value>
+  </data>
+  <data name="PersonalityLoadedFromFile" xml:space="preserve">
+    <value>Personality loaded from file.</value>
+  </data>
+  <data name="PlatformInitializing" xml:space="preserve">
+    <value>Platform is initializing</value>
+  </data>
+  <data name="PositionTrackingError" xml:space="preserve">
+    <value>Position tracking error.</value>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>Operation progress</value>
+  </data>
+  <data name="Safety" xml:space="preserve">
+    <value>Safety: One or two of the safety inputs are in safety state.</value>
+  </data>
+  <data name="ServoEnabled" xml:space="preserve">
+    <value>The servo is enabled!</value>
+  </data>
+  <data name="ServoNotEnabled" xml:space="preserve">
+    <value>The servo is not enabled.</value>
+  </data>
+  <data name="ShortProtection" xml:space="preserve">
+    <value>Short Protection: The current has exceeded a range which is considered as a phase to phase or phase to ground short.</value>
+  </data>
+  <data name="SpeedTrackingError" xml:space="preserve">
+    <value>Speed tracking error.</value>
+  </data>
+  <data name="Standstill" xml:space="preserve">
+    <value>Standstill. No movement.</value>
+  </data>
+  <data name="STI1" xml:space="preserve">
+    <value>STO enabled. The drive is in safety state. The motor cannot be activated.</value>
+  </data>
+  <data name="STI2" xml:space="preserve">
+    <value>Safety Input 2(STO_PWM). The drive is in safety state. The motor cannot be activated.</value>
+  </data>
+  <data name="StopActive" xml:space="preserve">
+    <value>The profiler stopped due to a switch.</value>
+  </data>
+  <data name="TargetReached" xml:space="preserve">
+    <value>Target reached!</value>
+  </data>
+  <data name="UnableToConnect" xml:space="preserve">
+    <value>Unable to connect to ELMO drive.</value>
+  </data>
+  <data name="UnableToDisconnect" xml:space="preserve">
+    <value>Unable to disconnect from drive.</value>
+  </data>
+  <data name="UnableToLoadFromFile" xml:space="preserve">
+    <value>Unable to load personality from file!</value>
+  </data>
+  <data name="Unable_to_start_upload_personality_from_drive" xml:space="preserve">
+    <value>Unable to start upload personality from drive.</value>
+  </data>
+  <data name="Undervoltage" xml:space="preserve">
+    <value>Undervoltage: The amplifier is not measuring the minimum required voltage.</value>
+  </data>
+  <data name="Uploaded_from_drive" xml:space="preserve">
+    <value>Uploaded from drive: {0}%.</value>
+  </data>
+  <data name="UploadFinished" xml:space="preserve">
+    <value>Upload finished!</value>
+  </data>
+  <data name="UploadInterrapted" xml:space="preserve">
+    <value>Upload from drive interrapted! Reason: {0}. </value>
+  </data>
+  <data name="UploadStarted" xml:space="preserve">
+    <value>Upload started!</value>
+  </data>
+  <data name="UserProgram" xml:space="preserve">
+    <value>User Program is running.</value>
+  </data>
+  <data name="WaitHoming" xml:space="preserve">
+    <value>Wait for homing operation complete.</value>
+  </data>
+</root>

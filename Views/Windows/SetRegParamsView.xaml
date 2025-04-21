@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="ush4.Views.Windows.SetRegParamsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ush4.Views.Windows"
+             xmlns:vm="clr-namespace:ush4.ViewModels"
+             xmlns:views="clr-namespace:ush4.Views.Windows"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <d:UserControl.DataContext>
+        <vm:SetRegParams_VM />
+    </d:UserControl.DataContext>
+    <Grid>
+        <GroupBox Header="Параметры регистрации" Grid.Row="0" Grid.Column="0" Margin="20,20,20,20" Background="#FFF3E2C7">
+            <Grid Margin="3,3,3,3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="165*"/>
+                    <RowDefinition Height="165*"/>
+                    <RowDefinition Height="165*"/>                    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="100*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border
+                    Grid.Row="0" Grid.Column="0"  
+                    BorderBrush="LightGray"  
+                    BorderThickness="1" 
+                    Background="LightGray"
+                    Name="border_freq"                       
+                    >
+                    <Border.InputBindings>
+                        <MouseBinding MouseAction="LeftDoubleClick"
+                        Command="{Binding SetFreqAsExecParamCommand}"
+                        CommandParameter="{Binding}" />
+                    </Border.InputBindings>
+
+                    <TextBlock HorizontalAlignment="Center" Height="20"  Margin="0,0,0,0" TextWrapping="Wrap" Text="Частота опроса, Hz"/>
+                </Border>
+
+                <Border 
+                    Grid.Row="1" Grid.Column="0"  
+                    BorderBrush="LightGray"  
+                    BorderThickness="1" 
+                    Background="LightGray" Margin="0,0,0,0" 
+                            >
+
+                    <Border.InputBindings>
+                        <MouseBinding MouseAction="LeftDoubleClick"
+                        Command="{Binding SetVelocAsExecParamCommand}"
+                        CommandParameter="{Binding}" />
+                    </Border.InputBindings>
+                    <TextBlock HorizontalAlignment="Center" Height="40"  Margin="0,0,0,0" TextWrapping="Wrap" Text="Число периодов регистрации"/>
+                </Border>
+
+                <Border
+                    Grid.Row="2" Grid.Column="0"  
+                    BorderBrush="LightGray"  
+                    BorderThickness="1" 
+                    Background="LightGray" Margin="0,0,0,0" 
+                            >
+                    <Border.InputBindings>
+                        <MouseBinding MouseAction="LeftDoubleClick"
+                        Command="{Binding SetAccelAsExecParamCommand}"
+                        CommandParameter="{Binding}" />
+                    </Border.InputBindings>
+
+                    <TextBlock HorizontalAlignment="Center" Height="40"   Margin="0,0,0,0" TextWrapping="Wrap" Text="Продолжительность регистрации, с"/>
+                </Border>
+                <!--<views:SetPointValueView DataContext="{Binding NumOfRegPeriods}" Grid.Row="1" Grid.Column="1"/>
+                <views:SetPointValueView DataContext="{Binding TimeOfReg}" Grid.Row="2" Grid.Column="1"/>-->
+
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding SiosRate, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" PreviewKeyDown="PreviewKeyDown"/>
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding NumOfRegPeriods,Mode=TwoWay}" Grid.Row="1" Grid.Column="1" PreviewKeyDown="PreviewKeyDown"/>
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding TimeOfReg, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" PreviewKeyDown="PreviewKeyDown"/>                                
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

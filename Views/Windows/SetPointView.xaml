@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="ush4.Views.Windows.SetPointView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ush4.Views.Windows"
+             xmlns:vm="clr-namespace:ush4.ViewModels.SetPoint"
+             xmlns:views="clr-namespace:ush4.Views.Windows"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <vm:SetPoint_VM />
+    </UserControl.DataContext>
+    <Grid>
+        <GroupBox Header="Параметры движения" Grid.Row="0" Grid.Column="0" Margin="20,20,20,20" Background="#FFF3E2C7">
+            <Grid Margin="3,3,3,3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="165*"/>
+                    <RowDefinition Height="165*"/>
+                    <RowDefinition Height="165*"/>
+                    <RowDefinition Height="165*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="80*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border
+                    Grid.Row="0" Grid.Column="0"  
+                    BorderBrush="LightGray"  
+                    BorderThickness="1" 
+                    Background="LightGray"
+                    Name="border_freq"                       
+                    >                                        
+
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0,0,0,0" TextWrapping="Wrap" Text="F, Hz"/>
+                </Border>
+
+                <Border 
+                    Grid.Row="1" Grid.Column="0"  
+                    BorderBrush="LightGray"  
+                    BorderThickness="1" 
+                    Background="{Binding ColorVel}" Margin="0,0,0,0"                     
+                            >
+
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="V, m/s"/>
+                </Border>
+
+                <Border
+                    Grid.Row="2" Grid.Column="0"  
+                    BorderBrush="LightGray"  
+                    BorderThickness="1" 
+                    Background="{Binding ColorAccel}" Margin="0,0,0,0"                             >
+                    
+
+                    <!--<TextBlock HorizontalAlignment="Center" Height="20" Margin="0,0,0,0" TextWrapping="Wrap" Text="A, m/s2"/>-->
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" Margin="0,4,0,2">
+                    A, m/s
+                    <Span Typography.Variants="Superscript">
+                        2&#x200a;
+                    </Span>
+                    </TextBlock>
+                </Border>
+
+                <Border
+                    Grid.Row="3" Grid.Column="0"  
+                    BorderBrush="LightGray"  
+                    BorderThickness="1" 
+                    Background="{Binding ColorDispl}"
+                            >
+
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="X, m"/>
+                </Border>
+
+                <views:SetPointValueView DataContext="{Binding Frequency}" Grid.Row="0" Grid.Column="1"/>
+                <views:SetPointValueView DataContext="{Binding Velocity}" Grid.Row="1" Grid.Column="1"/>
+                <views:SetPointValueView DataContext="{Binding Acceleration}" Grid.Row="2" Grid.Column="1"/>
+                <views:SetPointValueView DataContext="{Binding Displacement}" Grid.Row="3" Grid.Column="1"/>
+
+
+                <!--
+                            <Border Grid.Row="0" Grid.Column="1"  BorderBrush="Black"  BorderThickness="1" />
+                            <Border Grid.Row="1" Grid.Column="0"  BorderBrush="Black"  BorderThickness="1" />
+                            <Border Grid.Row="1" Grid.Column="1"  BorderBrush="Black"  BorderThickness="1" />       
+                            -->
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>
