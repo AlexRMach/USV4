@@ -165,6 +165,17 @@ namespace ush4.ViewModels
             }
         }
 
+        private Double resPress;
+        public Double ResPress
+        {
+            get { return resPress; }
+            set
+            {
+                resPress = value;
+                OnPropertyChanged("ResPress");
+            }
+        }
+
         private int answer;
         public int Answer
         {
@@ -252,6 +263,8 @@ namespace ush4.ViewModels
             //SiosData = new ObservableCollection<double>();
 
             //ModifiedCommands.ResetIsCenter();
+
+            ResPress = 0;
         }
 
         public override async Task<bool> ConnectAsync()
@@ -314,6 +327,9 @@ namespace ush4.ViewModels
         int[] sinJpValArr = new int[1000];
         double[] sinTphValArr = new double[1000];
 
+        double res_press_cnt = 0;
+        double res_press_sum = 0;
+
         private void FeedbackAndOutput()
         {
             while (IsConnected)
@@ -333,6 +349,10 @@ namespace ush4.ViewModels
                         Boolean is_center = ModifiedCommands.GetIsCenter();
                         Boolean is_steady = ModifiedCommands.GetIsSteady();
                         int answ = ModifiedCommands.GetAnswer();
+                        Double res_press = model.Commands.AnalogInput();
+
+                        res_press_sum += res_press;
+                        res_press_cnt++;
 
                         Boolean is_sin_val_ready = ModifiedCommands.GetIsSinValReady();
 
@@ -349,6 +369,15 @@ namespace ush4.ViewModels
                                 //IsRecording = is_rec;
                                 CurrentFrequency_Hz = freq;
                                 CurrentAmplitude_m = amp / model.CountsPerUnit;
+
+                                if (res_press_cnt >= 100)
+                                {
+                                    res_press_cnt = 0;
+
+                                    ResPress = res_press_sum / 100;
+
+                                    res_press_sum = 0;
+                                }
 
                                 IsCenter = is_center;// is_center;
                                                      // 

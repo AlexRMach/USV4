@@ -167,6 +167,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Infrastructure\PidParams.cs" />
     <Compile Include="Infrastructure\RegVars.cs" />
     <Compile Include="Infrastructure\ReportData.cs" />
     <Compile Include="Infrastructure\WindowService .cs" />

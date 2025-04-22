@@ -228,6 +228,19 @@ namespace ush4.ViewModels
             }
         }
 
+        /*
+        private double _res_press;
+        public double ResPress
+        {
+            get { return _res_press; }
+            set
+            {
+                _res_press = value;
+                OnPropertyChanged("ResPress");
+            }
+        }
+        */
+
         private bool _sios_used;
         public bool SiosUsed
         {
@@ -873,6 +886,8 @@ namespace ush4.ViewModels
 
             SelectedSetPoint = new SetPoint_VM() { Borders = this.Borders, Units = this.DisplacementUnits };
 
+            SelectedSetPoint.SetPointChanged += SelectedPointChanged;
+
             SetNewOscillationParamAndUpdateCallback = SetNewOscillationParamAndUpdate;                        
 
             SavePath = model.PathToDataFolder;
@@ -892,6 +907,8 @@ namespace ush4.ViewModels
             LoadWeight = 0;
 
             SiosUsed = true;
+
+            //ResPress = 0;
         }
 
        
@@ -1475,6 +1492,163 @@ namespace ush4.ViewModels
         }
 
         //public SiosDataVM siosDataVM = new SiosDataVM();
+
+        void SelectedPointChanged(Object sender)
+        {
+            // Критерии поиска
+            double freq_trg = ((SetPointValue_VM)((SetPoint_VM)sender).Frequency).Value;
+            double dipl_trg = ((SetPointValue_VM)((SetPoint_VM)sender).Displacement).Value;
+
+            double uf14 = 10;
+            double uf15 = 120;
+            double uf16 = 6E-7;
+            double uf17 = 4;
+
+            double uf10 = 10;
+            double uf11 = 120;
+            double uf12 = 6E-7;
+            double uf13 = 4;
+
+            double uf18 = 180; ;
+
+            double weigth;
+
+            double freq_prev = 0;
+            double freq;
+            double dipl_prev = 0;
+            double dipl;
+
+            double dipl_delta;
+
+            bool freq_found = false;
+            bool found = false;
+
+            // LoadWeight
+            // ПОиск ближайших коэффициентов в файле
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                Delimiter = ";",
+                HasHeaderRecord = true,
+            };
+
+            using (var stream = File.Open("./Settings/reg_params.csv", FileMode.Open))
+            using (var reader = new StreamReader(stream))
+            using (var csv = new CsvReader(reader, config))
+            {
+                csv.Read();
+                csv.ReadHeader();
+                while (csv.Read() && !found)
+                {
+                    /*
+                    var records = csv.GetRecords<PidParams>();                    
+                    
+                    weigth = ((PidParams)records).W;
+                    
+                    SetPidParams.Kp1_start = ((PidParams)records).uf14;
+                    */
+
+                    weigth = csv.GetField<double>(0);
+
+                    if(weigth == LoadWeight)
+                    {
+                        freq = csv.GetField<double>(1);
+
+                        dipl = csv.GetField<double>(2);
+
+                        if(freq_prev != freq)
+                        {
+                            freq_found = false;
+                        }
+
+                        if ((freq_trg >= freq_prev) && (freq >= freq_trg))
+                        {
+                            freq_found = true;
+                        }
+                        else
+                        {
+                            //freq_found = false;
+                        }
+
+                        if (freq_found)
+                        {                            
+                            if (dipl == dipl_trg)
+                            {
+                                uf14 = csv.GetField<double>(3);
+                                uf15 = csv.GetField<double>(4);
+                                uf16 = csv.GetField<double>(5);
+                                uf17 = csv.GetField<double>(6);
+
+                                uf10 = csv.GetField<double>(7);
+                                uf11 = csv.GetField<double>(8);
+                                uf12 = csv.GetField<double>(9);
+                                uf13 = csv.GetField<double>(10);
+
+                                uf18 = csv.GetField<double>(11);
+
+                                found = true;
+                            }
+                            else
+                            {
+                                dipl_delta = (dipl - dipl_prev)/2;
+
+                                if ((dipl_trg >= dipl_prev) && (dipl > dipl_trg))
+                                {
+                                    found = true;
+
+                                    if(dipl_trg > (dipl_prev + dipl_delta))
+                                    {
+                                        uf14 = csv.GetField<double>(3);
+                                        uf15 = csv.GetField<double>(4);
+                                        uf16 = csv.GetField<double>(5);
+                                        uf17 = csv.GetField<double>(6);
+
+                                        uf10 = csv.GetField<double>(7);
+                                        uf11 = csv.GetField<double>(8);
+                                        uf12 = csv.GetField<double>(9);
+                                        uf13 = csv.GetField<double>(10);
+
+                                        uf18 = csv.GetField<double>(11);
+                                    }                                    
+                                }
+                            }
+
+                            if(!found)
+                            {
+                                uf14 = csv.GetField<double>(3);
+                                uf15 = csv.GetField<double>(4);
+                                uf16 = csv.GetField<double>(5);
+                                uf17 = csv.GetField<double>(6);
+
+                                uf10 = csv.GetField<double>(7);
+                                uf11 = csv.GetField<double>(8);
+                                uf12 = csv.GetField<double>(9);
+                                uf13 = csv.GetField<double>(10);
+
+                                uf18 = csv.GetField<double>(11);
+                            }
+
+                            dipl_prev = dipl;
+                        }
+
+                        freq_prev = freq;                                                
+                    }                                        
+                }
+
+                SetPidParams.Kp1_start = uf14;
+                SetPidParams.Ki1_start = uf15;
+
+                SetPidParams.Kp2_start = uf16;
+                SetPidParams.Ki2_start = uf17;
+
+                SetPidParams.Kp1_steady = uf10;
+                SetPidParams.Ki1_steady = uf11;
+
+                SetPidParams.Kp2_steady = uf12;
+                SetPidParams.Ki2_steady = uf13;
+
+                SetPidParams.Kp3_start = uf18;
+            }
+        }
     }
 }
 

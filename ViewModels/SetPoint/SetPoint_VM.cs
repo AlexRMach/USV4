@@ -158,7 +158,7 @@ namespace ush4.ViewModels.SetPoint
                 RegVars.Freq = value;
             }
 
-                if (CheckAndRecalculate(sender, value))
+            if (CheckAndRecalculate(sender, value))
             {
                 if (SetPointChanged != null)
                     SetPointChanged(this);                

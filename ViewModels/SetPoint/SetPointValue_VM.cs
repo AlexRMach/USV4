@@ -13,8 +13,6 @@ namespace ush4.ViewModels.SetPoint
     {
         public event Action<Object, Double> ValueChanged;
 
-
-
         public enum enValueStates
         {
             Ok,

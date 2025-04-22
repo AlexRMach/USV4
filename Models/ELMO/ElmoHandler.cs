@@ -295,6 +295,15 @@ namespace ush4.Models.ELMO
             return Convert.ToInt32(rep);
         }
 
+        public Double AnalogInput()
+        {
+            String bm = ElmoCommandsEnum.ElmoArrayCommands.GetDataRequest(ElmoCommandsEnum.ElmoCommands.AnalogInput, 0);
+            String rep;
+
+            ResendInErrorCase(bm, out rep);
+            return Convert.ToDouble(rep);
+        }
+
 
         public void ExecuteUserProgram(String programName, string[] args = null)
         { 

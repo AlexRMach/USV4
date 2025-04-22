@@ -89,6 +89,7 @@ namespace ush4.Models.ELMO
             public const String ExecuteProgram = "XQ";
             public const String UnitMode = "UM";
             public const String KillUserProgram = "KL";
+            public const String AnalogInput = "AN";
 
             public static String GetDataRequest(String cmd)
             {
