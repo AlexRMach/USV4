@@ -59,6 +59,17 @@ namespace ush4.ViewModels
             }
         }
 
+        private string targetDispl_str;
+        public string TargetDisplStr
+        {
+            get { return targetDispl_str; }
+            set
+            {
+                targetDispl_str = value;
+                OnPropertyChanged("TargetDisplStr");
+            }
+        }
+
         private Double targetVel;
         public Double TargetVel
         {
@@ -70,6 +81,17 @@ namespace ush4.ViewModels
             }
         }
 
+        private string targetVel_str;
+        public string TargetVelStr
+        {
+            get { return targetVel_str; }
+            set
+            {
+                targetVel_str = value;
+                OnPropertyChanged("TargetVelStr");
+            }
+        }
+
         private Double targetAcc;
         public Double TargetAcc
         {
@@ -78,6 +100,17 @@ namespace ush4.ViewModels
             {
                 targetAcc = value;
                 OnPropertyChanged("TargetAcc");
+            }
+        }
+
+        private string targetAcc_str;
+        public string TargetAccStr
+        {
+            get { return targetAcc_str; }
+            set
+            {
+                targetAcc_str = value;
+                OnPropertyChanged("TargetAccStr");
             }
         }
 
@@ -392,6 +425,31 @@ namespace ush4.ViewModels
             TargetVel = target_vel;
             TargetAcc = target_acc;
 
+            string str_fmt = "0.######";
+
+            if (TargetDispl >= 0.0001)
+            {
+                str_fmt = "0.#######";
+            }
+            else
+            {
+                if (TargetDispl >= 0.00001)
+                {
+                    str_fmt = "0.########";
+                }
+                else
+                {
+                    if (TargetDispl >= 0.000001)
+                    {
+                        str_fmt = "0.#########";
+                    }
+                }
+            }
+
+            TargetDisplStr = TargetDispl.ToString(str_fmt);
+            TargetVelStr = TargetVel.ToString(str_fmt + "#");
+            TargetAccStr = TargetAcc.ToString(str_fmt + "#");
+
             time_gap_s = time_gap_s_;
 
             plot_time = 2 / (TargetFrequency);
@@ -476,7 +534,7 @@ namespace ush4.ViewModels
 
             int freq_index = FindIndexOfFrequency(RepFftData, TargetFrequency, time_gap_s, MaxSigma);
 
-            ResultValues.SetMeasuredValue(RepFftData[freq_index].X, RepFftData[freq_index].Y);
+            ResultValues.SetMeasuredValue(RepFftData[freq_index].X, RepFftData[freq_index].Y, TargetDispl);
 
             for (int i = 0; i < RepFftData.Length; i++)
             {

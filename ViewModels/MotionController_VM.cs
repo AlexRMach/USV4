@@ -349,10 +349,12 @@ namespace ush4.ViewModels
                         Boolean is_center = ModifiedCommands.GetIsCenter();
                         Boolean is_steady = ModifiedCommands.GetIsSteady();
                         int answ = ModifiedCommands.GetAnswer();
+                        
                         Double res_press = model.Commands.AnalogInput();
 
                         res_press_sum += res_press;
                         res_press_cnt++;
+                        
 
                         Boolean is_sin_val_ready = ModifiedCommands.GetIsSinValReady();
 
@@ -370,11 +372,11 @@ namespace ush4.ViewModels
                                 CurrentFrequency_Hz = freq;
                                 CurrentAmplitude_m = amp / model.CountsPerUnit;
 
-                                if (res_press_cnt >= 100)
+                                if (res_press_cnt >= 10)
                                 {
                                     res_press_cnt = 0;
 
-                                    ResPress = res_press_sum / 100;
+                                    ResPress = res_press_sum / 10;
 
                                     res_press_sum = 0;
                                 }
@@ -385,7 +387,7 @@ namespace ush4.ViewModels
 
                                 if(IsSteady && IsMoving)
                                 {
-                                    IsCheckStatusEnabled = false;
+                                    //IsCheckStatusEnabled = false; // AlexM 230425
                                 }
 
                                 Answer = answ;

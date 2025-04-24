@@ -9,7 +9,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <d:UserControl.DataContext>
-        <vm:SetPidParams_VM />
+        <vm:USH_VM />
     </d:UserControl.DataContext>
     <Grid>        
             <GroupBox Header="Параметры PID регулятора" Grid.Row="0" Grid.Column="0" Margin="2,2,2,2" Background="#FFF3E2C7">
@@ -126,17 +126,17 @@
                 <!--<views:SetPointValueView DataContext="{Binding NumOfRegPeriods}" Grid.Row="1" Grid.Column="1"/>
             <views:SetPointValueView DataContext="{Binding TimeOfReg}" Grid.Row="2" Grid.Column="1"/>-->
 
-                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp1_start, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" />
-                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Ki1_start,Mode=TwoWay}" Grid.Row="1" Grid.Column="1" />
-                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp2_start, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" />
-                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Ki2_start, Mode=TwoWay}" Grid.Row="3" Grid.Column="1" />
-                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp3_start, Mode=TwoWay}" Grid.Row="4" Grid.Column="1" />
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp1_start, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" />
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Ki1_start,Mode=TwoWay}" Grid.Row="1" Grid.Column="1" />
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp2_start, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" />
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Ki2_start, Mode=TwoWay}" Grid.Row="3" Grid.Column="1" />
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp3_start, Mode=TwoWay}" Grid.Row="4" Grid.Column="1" />
 
-                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp1_steady, Mode=TwoWay}" Grid.Row="0" Grid.Column="3" />
-                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Ki1_steady,Mode=TwoWay}" Grid.Row="1" Grid.Column="3" />
-                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp2_steady, Mode=TwoWay}" Grid.Row="2" Grid.Column="3" />
-                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Ki2_steady, Mode=TwoWay}" Grid.Row="3" Grid.Column="3" />
-                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp3_steady, Mode=TwoWay}" Grid.Row="4" Grid.Column="3" />
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp1_steady, Mode=TwoWay}" Grid.Row="0" Grid.Column="3" />
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Ki1_steady,Mode=TwoWay}" Grid.Row="1" Grid.Column="3" />
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp2_steady, Mode=TwoWay}" Grid.Row="2" Grid.Column="3" />
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Ki2_steady, Mode=TwoWay}" Grid.Row="3" Grid.Column="3" />
+                <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Text="{Binding Kp3_steady, Mode=TwoWay}" Grid.Row="4" Grid.Column="3" />
             </Grid>
             </GroupBox>
         </Grid>

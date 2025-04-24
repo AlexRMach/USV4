@@ -111,7 +111,7 @@
                     </GroupBox>
 
                     <GroupBox Header="Давление в ресивере" Grid.Row="2" Grid.Column="2" Margin="20,10,20,10">
-                        <Label DataContext="{Binding MotionController}" Content="{Binding ResPress, Mode=TwoWay}" HorizontalContentAlignment="Center"></Label>
+                        <Label DataContext="{Binding MotionController}" Content="{Binding ResPress, Mode=TwoWay}" ContentStringFormat="{}{0,7:0.0}" HorizontalContentAlignment="Center"></Label>
                     </GroupBox>
 
                     <views:RemoteControlView DataContext="{Binding RemoteControl}" x:Name="RemoteControl" Grid.Row="0" Grid.Column="2" Margin="20,10,20,10"/>
@@ -120,7 +120,8 @@
 
                     <views:SetRegParamsView DataContext="{Binding SetRegParams}" x:Name="SetRegParams" Grid.Row="1" Grid.Column="0" />
 
-                    <views:SetPidParamsView DataContext="{Binding SetPidParams}" x:Name="SetPidParams" Grid.Row="1" Grid.Column="1" />
+                   <!-- <views:SetPidParamsView DataContext="{Binding SetPidParams}" x:Name="SetPidParams" Grid.Row="1" Grid.Column="1" />-->
+                    <views:SetPidParamsView x:Name="SetPidParams" Grid.Row="1" Grid.Column="1" />
 
                     <Button 
                         Content="Завершение работы" 

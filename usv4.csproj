@@ -208,6 +208,9 @@
     <Compile Include="ViewModels\SetPidParams_VM.cs" />
     <Compile Include="ViewModels\SetRegParams_VM.cs" />
     <Compile Include="ViewModels\SiosDataVM.cs" />
+    <Compile Include="Views\Windows\PidParamsWindow.xaml.cs">
+      <DependentUpon>PidParamsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Windows\PlayingParamView.xaml.cs">
       <DependentUpon>PlayingParamView.xaml</DependentUpon>
     </Compile>
@@ -305,6 +308,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Windows\PidParamsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Windows\PlayingParamView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

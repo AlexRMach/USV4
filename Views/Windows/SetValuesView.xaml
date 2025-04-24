@@ -32,9 +32,9 @@
                 <Label Grid.Row="3" Content="Acceleration" Grid.Column="0"></Label>
 
                 <Label Grid.Row="0" Content="{Binding TargetFrequency}" ContentStringFormat="{}{0:0.########}" HorizontalContentAlignment="Center" Grid.Column="1" FontWeight="Bold"></Label>
-                <Label Grid.Row="1" Content="{Binding TargetDispl}"  ContentStringFormat="{}{0:0.########}" HorizontalContentAlignment="Center" Grid.Column="1" FontWeight="Bold"></Label>
-                <Label Grid.Row="2" Content="{Binding TargetVel}"  ContentStringFormat="{}{0:0.########}" HorizontalContentAlignment="Center" Grid.Column="1" FontWeight="Bold"></Label>
-                <Label Grid.Row="3" Content="{Binding TargetAcc}"  ContentStringFormat="{}{0:0.########}" HorizontalContentAlignment="Center" Grid.Column="1" FontWeight="Bold"></Label>
+                <Label Grid.Row="1" Content="{Binding TargetDisplStr}"  HorizontalContentAlignment="Center" Grid.Column="1" FontWeight="Bold"></Label>
+                <Label Grid.Row="2" Content="{Binding TargetVelStr}"  HorizontalContentAlignment="Center" Grid.Column="1" FontWeight="Bold"></Label>
+                <Label Grid.Row="3" Content="{Binding TargetAccStr}"  HorizontalContentAlignment="Center" Grid.Column="1" FontWeight="Bold"></Label>
 
                 <Label Grid.Row="0" Content="Hz" Grid.Column="2"></Label>
                 <Label Grid.Row="1" Content="m" Grid.Column="2"></Label>

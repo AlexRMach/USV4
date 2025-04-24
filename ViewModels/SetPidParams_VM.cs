@@ -135,7 +135,7 @@ namespace ush4.ViewModels
             Ki2_steady = 1e-6;
 
             Kp3_start = 250;
-            Kp3_steady = 250;
+            Kp3_steady = 250;            
         }
     }
 }

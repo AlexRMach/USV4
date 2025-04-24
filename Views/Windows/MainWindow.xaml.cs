@@ -47,6 +47,9 @@ namespace ush4
 
             //SiosDataView siosDataView = new SiosDataView();
             //siosDataView.Show();
+
+            PidParamsWindow pidParamsWindow = new PidParamsWindow();
+            pidParamsWindow.Show();
         }
 
         void OnPreviewTextInput(object sender, TextCompositionEventArgs e)

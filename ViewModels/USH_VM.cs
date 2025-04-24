@@ -902,12 +902,18 @@ namespace ush4.ViewModels
 
             SetPidParams = new SetPidParams_VM();
 
+            SetPidParams.Kp1_start = 100;
+
             SelectedPage = 0;
 
             LoadWeight = 0;
 
             SiosUsed = true;
+            /*
+            PidParamsWindow pidParamsWindow = new PidParamsWindow();
 
+            pidParamsWindow.Show();
+            */
             //ResPress = 0;
         }
 
@@ -1499,14 +1505,14 @@ namespace ush4.ViewModels
             double freq_trg = ((SetPointValue_VM)((SetPoint_VM)sender).Frequency).Value;
             double dipl_trg = ((SetPointValue_VM)((SetPoint_VM)sender).Displacement).Value;
 
-            double uf14 = 10;
+            double uf14 = 40;
             double uf15 = 120;
-            double uf16 = 6E-7;
+            double uf16 = 4E-7;
             double uf17 = 4;
 
-            double uf10 = 10;
+            double uf10 = 40;
             double uf11 = 120;
-            double uf12 = 6E-7;
+            double uf12 = 4E-7;
             double uf13 = 4;
 
             double uf18 = 180; ;
